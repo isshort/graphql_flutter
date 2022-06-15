@@ -9,5 +9,7 @@ import 'package:graphql_flutter/app/app.dart';
 import 'package:graphql_flutter/bootstrap.dart';
 
 void main() {
-  bootstrap(() => const App());
+  bootstrap(() => App());
+  // bootstrap(GoRouterApp.new);
+  // bootstrap(() => GoRouterApp());
 }
