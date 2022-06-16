@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_graphql_todo/modules/auth/logic/login/cubit/login_cubit.dart';
+import 'package:flutter_graphql_todo/modules/auth/model/login_model.dart';
 import 'package:go_router/go_router.dart';
-import 'package:graphql_flutter/modules/auth/logic/cubit/auth_cubit.dart';
-import 'package:graphql_flutter/modules/auth/model/login_model.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({super.key});
@@ -12,7 +12,7 @@ class SignInPage extends StatelessWidget {
       appBar: AppBar(title: const Text('SignInPage Title')),
       body: ElevatedButton(
         onPressed: () {
-          BlocProvider.of<AuthCubit>(context)
+          BlocProvider.of<LoginCubit>(context)
               .login(LoginUser(password: 'password', username: 'username'));
           // context
           //     .read<AuthCubit>()

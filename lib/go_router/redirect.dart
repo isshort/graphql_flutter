@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_graphql_todo/go_router/data.dart';
 import 'package:go_router/go_router.dart';
-import 'package:graphql_flutter/go_router/data.dart';
 import 'package:provider/provider.dart';
 
 class GoRouterApp extends StatelessWidget {

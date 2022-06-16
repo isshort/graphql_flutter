@@ -1,12 +1,13 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:graphql_flutter/modules/auth/model/login_model.dart';
 
-part 'auth_state.dart';
+import '../../../model/login_model.dart';
 
-class AuthCubit extends Cubit<AuthState> with ChangeNotifier {
-  AuthCubit() : super(const AuthState());
+part 'login_state.dart';
+
+class LoginCubit extends Cubit<LoginState> with ChangeNotifier {
+  LoginCubit() : super(const LoginState());
 
   // bool? get loggedIn => state.loginUser?.username.isNotEmpty;
   bool? get loggedIn {
@@ -17,10 +18,10 @@ class AuthCubit extends Cubit<AuthState> with ChangeNotifier {
   }
 
   Future<void> login(LoginUser loginUser) async {
-    emit(AuthState(loginUser: loginUser));
+    emit(LoginState(loginUser: loginUser));
   }
 
   Future<void> logout() async {
-    emit(const AuthState());
+    emit(const LoginState());
   }
 }

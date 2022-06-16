@@ -10,7 +10,7 @@ import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:flutter/widgets.dart';
-import 'package:graphql_flutter/core/locator/locator.dart';
+import 'package:flutter_graphql_todo/core/locator/locator.dart';
 
 class AppBlocObserver extends BlocObserver {
   @override

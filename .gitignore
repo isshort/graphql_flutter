@@ -15,8 +15,7 @@
 *.ipr
 *.iws
 .idea/*
-.vscode
-.dart_tool
+
 # Visual Studio Code related
 .classpath
 .project

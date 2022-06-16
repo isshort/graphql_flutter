@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
-project(graphql_flutter LANGUAGES CXX)
+project(flutter_graphql_todo LANGUAGES CXX)
 
-set(BINARY_NAME "graphql_flutter")
+set(BINARY_NAME "flutter_graphql_todo")
 
 cmake_policy(SET CMP0063 NEW)
 

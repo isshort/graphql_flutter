@@ -7,8 +7,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:graphql_flutter/counter/counter.dart';
-import 'package:graphql_flutter/l10n/l10n.dart';
+import 'package:flutter_graphql_todo/counter/cubit/counter_cubit.dart';
+import 'package:flutter_graphql_todo/l10n/l10n.dart';
 
 class CounterPage extends StatelessWidget {
   const CounterPage({super.key});

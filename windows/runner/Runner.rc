@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.example.verygoodcore.graphql-flutter" "\0"
-            VALUE "FileDescription", "graphql_flutter" "\0"
+            VALUE "CompanyName", "com.example.verygoodcore.flutter-graphql-todo" "\0"
+            VALUE "FileDescription", "flutter_graphql_todo" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "graphql_flutter" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2022 com.example.verygoodcore.graphql-flutter. All rights reserved." "\0"
-            VALUE "OriginalFilename", "graphql_flutter.exe" "\0"
-            VALUE "ProductName", "Graphql Flutter" "\0"
+            VALUE "InternalName", "flutter_graphql_todo" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2022 com.example.verygoodcore.flutter-graphql-todo. All rights reserved." "\0"
+            VALUE "OriginalFilename", "flutter_graphql_todo.exe" "\0"
+            VALUE "ProductName", "Flutter Graphql Todo" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
