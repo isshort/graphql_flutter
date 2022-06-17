@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_graphql_todo/app/app_router.dart';
 import 'package:flutter_graphql_todo/l10n/l10n.dart';
+import 'package:flutter_graphql_todo/modules/auth/logic/login/cubit/login_cubit.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-
-import '../../modules/auth/logic/login/cubit/login_cubit.dart';
 
 class App extends StatelessWidget {
   App({super.key});
@@ -16,6 +15,8 @@ class App extends StatelessWidget {
       child: MaterialApp.router(
         routeInformationParser:
             RouteGenrate().customRouter.routeInformationParser,
+        routeInformationProvider:
+            RouteGenrate().customRouter.routeInformationProvider,
         routerDelegate: RouteGenrate().customRouter.routerDelegate,
         title: 'Flutter GraphQl',
         theme: ThemeData(
