@@ -10,6 +10,8 @@ import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_graphql_todo/core/locator/locator.dart';
+import 'package:graphql_flutter/graphql_flutter.dart';
 
 class AppBlocObserver extends BlocObserver {
   @override
@@ -26,6 +28,9 @@ class AppBlocObserver extends BlocObserver {
 }
 
 Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
+  final graphqlClient = GraphQLClient(
+      link: HttpLink('https://demo.saleor.io/graphql/'), cache: GraphQLCache());
+  await setup(graphqlClient);
   FlutterError.onError = (details) {
     log(details.exceptionAsString(), stackTrace: details.stack);
   };

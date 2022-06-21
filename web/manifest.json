@@ -1,11 +1,11 @@
 {
-    "name": "Graphql Flutter",
-    "short_name": "Graphql Flutter",
+    "name": "Flutter Graphql Todo",
+    "short_name": "Flutter Graphql Todo",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "Graphql flutter project with saleor api",
+    "description": "A Very Good Project created by Very Good CLI.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

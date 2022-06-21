@@ -5,14 +5,14 @@
 // license that can be found in the LICENSE file or at
 // https://opensource.org/licenses/MIT.
 
+import 'package:flutter_graphql_todo/app/app.dart';
+import 'package:flutter_graphql_todo/counter/counter.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:graphql_flutter/app/app.dart';
-import 'package:graphql_flutter/counter/counter.dart';
 
 void main() {
   group('App', () {
     testWidgets('renders CounterPage', (tester) async {
-      await tester.pumpWidget(const App());
+      await tester.pumpWidget(App());
       expect(find.byType(CounterPage), findsOneWidget);
     });
   });

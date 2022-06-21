@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.verygoodcore.graphql_flutter">
+    package="com.example.verygoodcore.flutter_graphql_todo">
    <application
         android:label="${appName}"
         android:icon="@mipmap/ic_launcher">

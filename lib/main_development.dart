@@ -5,9 +5,15 @@
 // license that can be found in the LICENSE file or at
 // https://opensource.org/licenses/MIT.
 
-import 'package:graphql_flutter/app/app.dart';
-import 'package:graphql_flutter/bootstrap.dart';
+import 'package:flutter_graphql_todo/app/view/app.dart';
+import 'package:flutter_graphql_todo/bootstrap.dart';
+import 'package:http/http.dart';
+
+import 'core/api/api_client.dart';
+import 'modules/auth/graphql/queries.dart';
 
 void main() {
-  bootstrap(() => const App());
+  bootstrap(() => App());
+  // bootstrap(GoRouterApp.new);
+  // bootstrap(() => GoRouterApp());
 }
