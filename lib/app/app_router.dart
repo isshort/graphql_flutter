@@ -1,22 +1,25 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_graphql_todo/counter/counter.dart';
-import 'package:flutter_graphql_todo/modules/auth/logic/login/cubit/login_cubit.dart';
+import 'package:flutter_graphql_todo/modules/auth/cubit/auth_cubit.dart';
 import 'package:flutter_graphql_todo/modules/auth/login_repo.dart';
 import 'package:flutter_graphql_todo/modules/auth/sign_up.dart';
+import 'package:flutter_graphql_todo/modules/home/pages/view/home_page.dart';
 
 import 'package:go_router/go_router.dart';
 
-import '../modules/home/home.dart';
-
 class RouteGenrate {
-  RouteGenrate();
+  RouteGenrate(AuthState authState) : _authState = authState;
 
-  GoRouter get customRouter => _goRouter;
+  final AuthState _authState;
 
-  final authCubit = LoginCubit();
-
-  late final _goRouter = GoRouter(
+  late final router = GoRouter(
+    // initialLocation: '/initial',
     routes: <GoRoute>[
+      // GoRoute(
+      //   path: '/initial',
+      //   builder: (BuildContext context, GoRouterState state) =>
+      //       const InitialPage(),
+      // ),
       GoRoute(
         path: '/counter',
         builder: (BuildContext context, GoRouterState state) =>
@@ -39,17 +42,15 @@ class RouteGenrate {
       ),
     ],
     redirect: (state) {
-      // final loggedIn = authCubit.loggedIn;
-      // final isLogging = state.subloc == '/login';
-      // // if (loggedIn != true) {
-      // //   print("autcubit ${authCubit.loggedIn}");
-      // // }
-      // if (loggedIn != true) {
-      //   return isLogging ? null : '/login';
-      // }
-      // if (isLogging) return '/';
+      final loggedIn = _authState is AuthLoggedIn;
+      print(_authState);
+      final loggingIn = state.subloc == '/login';
+      if (!loggedIn) {
+        return loggingIn ? null : '/login';
+      }
+      // if (loggedIn) return '/';
       return null;
     },
-    refreshListenable: authCubit,
+    // refreshListenable: authCubit,
   );
 }
