@@ -12,10 +12,9 @@ class AuthInitial extends AuthState {}
 class AuthLoading extends AuthState {}
 
 class AuthLoggedIn extends AuthState {
-  const AuthLoggedIn({required this.status});
-  final bool status;
+  const AuthLoggedIn();
   @override
-  List<Object> get props => [status];
+  List<Object> get props => [];
 }
 
 class AuthSuccess extends AuthState {

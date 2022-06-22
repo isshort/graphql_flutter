@@ -12,6 +12,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     final router = RouteGenrate(context.watch<AuthCubit>().state).router;
     return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
       routeInformationParser: router.routeInformationParser,
       routeInformationProvider: router.routeInformationProvider,
       routerDelegate: router.routerDelegate,

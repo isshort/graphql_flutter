@@ -10,7 +10,7 @@ mixin GraphQlMixin {
         document: gql(body),
       ),
     );
-    print("your data is ${data.data}");
+    // print("your data is ${data.data}");
     return data;
   }
 

@@ -11,18 +11,9 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('This is homepage App bar')),
-      body: Column(children: [
-        ElevatedButton(
-          onPressed: () => context.read<AuthCubit>().logout(),
-          child: const Text('Logout'),
-        ),
-      ]),
+    return BlocProvider(
+      create: (context) => sl<HomeCubit>(),
+      child: const ProductPageView(),
     );
-    // return BlocProvider(
-    //   create: (context) => sl<HomeCubit>(),
-    //   child: const ProductPageView(),
-    // );
   }
 }

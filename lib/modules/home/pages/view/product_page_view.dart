@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_graphql_todo/modules/auth/cubit/auth_cubit.dart';
 import 'package:flutter_graphql_todo/modules/home/data/data.dart';
 import 'package:flutter_graphql_todo/modules/home/pages/logic/cubit/home_cubit.dart';
 import 'package:flutter_graphql_todo/utils/pagination/pagination_mixin.dart';
@@ -19,7 +20,15 @@ class _ProductPageViewState extends State<ProductPageView>
     // print(fetchData(0));
 
     return Scaffold(
-      appBar: AppBar(title: const Text('HomePage Title')),
+      appBar: AppBar(title: const Text('HomePage Title'), actions: [
+        TextButton.icon(
+          icon: const Icon(Icons.logout),
+          label: const Text("logout"),
+          onPressed: () {
+            context.read<AuthCubit>().logout();
+          },
+        )
+      ]),
       body: PagedListView<int, Product>(
         key: const Key('Product view'),
         pagingController: pagingContorler,
