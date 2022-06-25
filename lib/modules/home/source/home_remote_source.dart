@@ -15,7 +15,8 @@ class HomeRemoteSourceImpl extends HomeRemoteSource with GraphQlMixin {
   @override
   Future<List<Product>> getProducts() async {
     final _res = await query(GraphQlQuery.productQuery);
-    return response(_res, Product.fromJson, 'data', 'products');
+
+    return response(_res, Product.fromJson, 'products', 'edges');
   }
 
   @override

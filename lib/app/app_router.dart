@@ -1,14 +1,14 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_graphql_todo/counter/counter.dart';
 import 'package:flutter_graphql_todo/modules/auth/cubit/auth_cubit.dart';
 import 'package:flutter_graphql_todo/modules/auth/login_repo.dart';
 import 'package:flutter_graphql_todo/modules/auth/sign_up.dart';
-import 'package:flutter_graphql_todo/modules/home/pages/view/home_page.dart';
+import 'package:flutter_graphql_todo/modules/home/view/main_page.dart';
 
 import 'package:go_router/go_router.dart';
 
-class RouteGenrate {
-  RouteGenrate(AuthState authState) : _authState = authState;
+class RouteGenerate {
+  RouteGenerate(AuthState authState) : _authState = authState;
 
   final AuthState _authState;
 
@@ -28,7 +28,7 @@ class RouteGenrate {
       GoRoute(
         path: '/',
         builder: (BuildContext context, GoRouterState state) =>
-            const HomePage(),
+            const MainPage(),
       ),
       GoRoute(
         path: '/login',

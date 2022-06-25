@@ -20,19 +20,23 @@ mixin GraphQlMixin {
     String param1,
     String param2,
   ) async {
-    try {
-      if (response.data != null) {
-        final responseResult = response.data?[param1][param2] as List<Object?>;
-        return responseResult
-            .map<T>(
-              (e) => fromJson(e! as Map<String, String>),
-            )
-            .toList();
-      }
-      return [];
-    } catch (e) {
+    // try {
+    if (response.data != null) {
+      // print(response.data?['products']['edges']);
+      final responseResult = response.data?[param1][param2] as List<Object?>;
+      // print(responseResult);
+
+      return responseResult
+          .map<T>(
+            (e) => fromJson(e! as Map<String, String>),
+          )
+          .toList();
+    } else {
       return [];
     }
+    // } catch (e) {
+    //   return [];
+    // }
   }
 
   Future<QueryResult> queryPage(int page, String body) async {

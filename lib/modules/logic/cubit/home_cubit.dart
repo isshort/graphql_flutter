@@ -10,8 +10,10 @@ class HomeCubit extends Cubit<HomeState> {
 
   final HomeRepository homeRepository;
   void change(int val) => emit(HomeState(val));
+
   Future<List<Product>> getProducts() async {
     final _productList = await homeRepository.getProducts();
+    print(_productList);
     return _productList.fold(
       (l) => throw Exception('Some error was happend'),
       (r) => r,

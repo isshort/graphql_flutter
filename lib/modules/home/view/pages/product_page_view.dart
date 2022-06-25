@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_graphql_todo/modules/auth/cubit/auth_cubit.dart';
 import 'package:flutter_graphql_todo/modules/home/data/data.dart';
-import 'package:flutter_graphql_todo/modules/home/pages/logic/cubit/home_cubit.dart';
+import 'package:flutter_graphql_todo/modules/logic/cubit/cubit.dart';
 import 'package:flutter_graphql_todo/utils/pagination/pagination_mixin.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 
@@ -31,7 +31,7 @@ class _ProductPageViewState extends State<ProductPageView>
       ]),
       body: PagedListView<int, Product>(
         key: const Key('Product view'),
-        pagingController: pagingContorler,
+        pagingController: pagingController,
         builderDelegate: PagedChildBuilderDelegate<Product>(
           itemBuilder: (context, item, index) => const Card(
             child: ListTile(
@@ -65,8 +65,8 @@ class _ProductPageViewState extends State<ProductPageView>
 
   @override
   Future<List<Product>> fetchData(int page) async {
-    final data = context.read<HomeCubit>().getProducts();
-    // print(data);
+    final data = await context.read<HomeCubit>().getProducts();
+
     return data;
   }
 }

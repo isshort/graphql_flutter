@@ -2,8 +2,8 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter_graphql_todo/core/network/network_info.dart';
 import 'package:flutter_graphql_todo/modules/auth/cubit/auth_cubit.dart';
 import 'package:flutter_graphql_todo/modules/home/data/repo/home_repo.dart';
-import 'package:flutter_graphql_todo/modules/home/pages/logic/cubit/home_cubit.dart';
 import 'package:flutter_graphql_todo/modules/home/source/home_remote_source.dart';
+import 'package:flutter_graphql_todo/modules/logic/cubit/cubit.dart';
 import 'package:flutter_graphql_todo/utils/cache/app_token.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get_it/get_it.dart';
@@ -40,10 +40,14 @@ Future<void> setup(
         )
         ..registerLazySingleton<HomeCubit>(
           () => HomeCubit(
-            sl<HomeRepository>(),
+            sl.get<HomeRepository>(),
           ),
         )
-
+        // ..registerSingleton<HomeCubit>(
+        //   HomeCubit(
+        //     sl.get<HomeRepository>(),
+        //   ),
+        // )
         // Auth
         ..registerLazySingleton<AuthCubit>(
           () => AuthCubit(

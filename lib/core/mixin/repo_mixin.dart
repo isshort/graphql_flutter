@@ -41,6 +41,7 @@ mixin RepositoryMixin {
     if (await netWorkInfo.isConncted()) {
       try {
         final _models = await getRemote();
+        print("model is $_models");
         // await cache(_models);
         return Right(_models);
       } catch (e) {
